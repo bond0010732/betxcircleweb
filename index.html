@@ -190,7 +190,7 @@
     <!-- ========================= JS here ========================= -->
     <script src="assets/js/bootstrap.min.js"></script>
 
-    <script>
+<!--     <script>
   document.addEventListener("DOMContentLoaded", function () {
     const userAgent = navigator.userAgent.toLowerCase();
     const androidButtons = document.querySelectorAll(".android-only");
@@ -199,6 +199,20 @@
       androidButtons.forEach(btn => btn.style.display = "inline-block");
     } else {
       androidButtons.forEach(btn => btn.style.display = "none");
+    }
+  });
+</script> -->
+
+    <!-- Device Detection Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const isAndroid = /android/i.test(navigator.userAgent);
+    const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+
+    if (isAndroid) {
+      document.querySelectorAll(".android-only").forEach(el => el.style.display = "inline-flex");
+    } else if (isIOS) {
+      document.querySelectorAll(".ios-only").forEach(el => el.style.display = "inline-flex");
     }
   });
 </script>
@@ -224,6 +238,7 @@
 
 
 </html>
+
 
 
 
