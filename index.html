@@ -7,7 +7,7 @@
     <title>Betxcircle - Play games.</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Logo.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/Logo.png" />
 
     <!-- ========================= CSS here ========================= -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -110,10 +110,13 @@
             <!-- Android button -->
             <a href="https://github.com/bond0010732/betxcircleweb/releases/download/v1.0.0/betxcircleApp.apk"
                class="btn android-only"
+                id="androidButton"
                download
                style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;background:#041c24;color:#fff;border-radius:8px;font-size:16px;text-decoration:none;">
               <i class="lni lni-play-store"></i> Download for Android
             </a>
+
+            
           </div>
 
         </div>
@@ -149,8 +152,9 @@
             Download the APK directly from our site and enjoy all features instantly!
           </p>
           <div class="button wow fadeInUp" data-wow-delay=".6s" style="display:flex;justify-content:center;">
-            <a href="https://github.com/bond0010732/betxcircleweb/releases/download/v1.0.0/betxcircle.apk" 
+            <a href="https://github.com/bond0010732/betxcircleweb/releases/download/v1.0.0/betxcircleApp.apk" 
                class="btn android-only"
+                 id="androidButton"
                download
                style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#041c24;color:#fff;border:none;border-radius:8px;font-size:16px;cursor:pointer;text-decoration:none;">
               <i class="lni lni-play-store"></i>
@@ -214,6 +218,15 @@
     }
   });
 </script> -->
+    <script>
+  // Detect Android
+  const isAndroid = /Android/i.test(navigator.userAgent);
+
+  // Show button only if device is Android
+  if (isAndroid) {
+    document.getElementById("androidButton").style.display = "inline-flex";
+  }
+</script>
 
     <!-- Device Detection Script -->
 <script>
@@ -250,6 +263,7 @@
 
 
 </html>
+
 
 
 
